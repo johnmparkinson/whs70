@@ -7,6 +7,7 @@ const browserSync = require('browser-sync');
 const cssnano = require('gulp-cssnano');
 const del = require('del');
 const minify = require('gulp-babel-minify');
+const csvtojson = require('gulp-csvtojson');
 
 /* To Do */
 // Clean
@@ -40,6 +41,10 @@ const paths = {
     assets: {
         src: "src/**/*.+(pdf|xml|webmanifest|txt|ico)",
         dest: destRoot
+    },
+    csv: {
+        src: "src/data/**/*.csv",
+        dest: destRoot + "/data"
     }
 };
 
@@ -107,6 +112,12 @@ const compileAssets = () => {
         .pipe(gulp.dest(paths.assets.dest))
 }
 
+const compileCsv = () => {
+    return gulp.src(paths.csv.src)
+        .pipe(csvtojson({ toArrayString: true }))
+        .pipe(gulp.dest(paths.csv.dest))
+}
+
 const clean = (done) => {
     del.sync(destRoot);
     done();
@@ -119,11 +130,12 @@ const watch = (done) => {
     const watchImages = gulp.watch(paths.images.src, gulp.series(compileImages, server.reload));
     const watchData = gulp.watch(paths.data.src, gulp.series(compileData, server.reload));
     const watchAssets = gulp.watch(paths.assets.src, gulp.series(compileAssets, server.reload));
+    const watchCsv = gulp.watch(paths.csv.src, gulp.series(compileCsv, server.reload));
     done();
 };
 
 const compile = gulp.parallel(
-    compileMarkup, compileStyle, compileScript, compileImages, compileData, compileAssets
+    compileMarkup, compileStyle, compileScript, compileImages, compileData, compileAssets, compileCsv
 );
 
 gulp.task('default', gulp.series(clean, compile, serve, watch));
