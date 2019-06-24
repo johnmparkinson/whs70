@@ -1,0 +1,10 @@
+.header--page-title {
+    margin: 1rem;  
+    @media (max-width: $breakpoint-md) {
+        font-size: 1.75rem;
+    }
+}
+
+.header--section {
+    margin: 2rem 1rem;
+}

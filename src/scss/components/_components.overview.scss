@@ -1,0 +1,13 @@
+.overview {
+
+    &__text {
+        &--tldr {
+            @media (max-width: $breakpoint-md) {
+                display: none;
+            }
+        }
+    }
+
+    
+}
+

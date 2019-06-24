@@ -1,0 +1,39 @@
+.columns {
+    @include flexbox(); 
+    @include flex-wrap();
+    @include flex-direction(column);
+    @include flex-wrap(wrap);
+    @include justify-content(space-around);
+    padding: 2rem;  
+    @media (min-width:$breakpoint-md) {
+        @include flex-direction(row);
+    }
+}
+
+.columns__article {
+    @include flex(58%);
+    @media (min-width:$breakpoint-md) {
+        margin-right:2rem;
+    }
+}
+
+.columns__aside {
+    @include flex(30%);
+    
+}
+
+.column {    
+    margin:1rem 0 2rem 0;
+    @media (min-width:$breakpoint-md) {
+        padding:1rem;
+        &--30 {
+            @include flex(1,0,30%);
+        }
+        &--60 {
+            @include flex(1,0,60%)
+        }
+        &--50 {
+            @include flex(1,0,45%)
+        }
+    }
+}

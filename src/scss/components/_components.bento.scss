@@ -1,0 +1,125 @@
+$bento-margin:12px;
+$bento-height:280px;
+$bento-height-md: 300px;
+$bento-height-sm: 200px;
+$bento-width-sm: 308px;
+$bento-width-md: 640px;
+$bento-img-width: 332px;
+$bento-img-max-height: 280px;
+$breakpoint-md: 700px;
+
+.bento__box {
+    @include flexbox();
+    @include flex-flow(wrap);    
+    @include justify-content(center);   
+    width: 100%;
+    padding: $bento-margin;
+}
+.bento {
+    margin: $bento-margin;
+    display:block;    
+    @media (min-width:$breakpoint-md) {
+        min-height: $bento-height;
+    }
+}
+
+.bento__link {
+    text-decoration: none;
+    &:hover {
+        background-color: #fbfdff;
+    }
+}
+
+.bento--md {
+    @include flex(1,0,100%);
+    @include flexbox();
+    @include flex-flow(wrap);    
+    //@include justify-content(center); 
+    @media (min-width:$breakpoint-md) {
+        @include flex(0,0,$bento-width-md);        
+    }
+}
+
+.bento__image--md {
+    @include flex(1,1,100%);
+    overflow: hidden;
+    @media (min-width:$breakpoint-md) {
+        @include flex(0,0,$bento-img-width); 
+        max-height: $bento-height;        
+    }
+}
+
+.bento__image--md-height {
+    max-height: $bento-height-md;
+    @media (min-width:$breakpoint-md) {
+        max-height: $bento-height;
+    }
+}
+
+.bento__image--sm-height {
+    max-height: $bento-height-sm;
+    @media (min-width:$breakpoint-md) {
+        max-height: $bento-height;
+    }
+}
+
+.bento__image--hidden {
+    display:none;
+    @media (min-width:1024px) {
+        display: block;
+    }
+}
+
+.bento--sm {
+    @include flex(1,0,100%);
+    @media (min-width:$breakpoint-md) {
+        @include flex(0,0,$bento-width-sm);
+    }
+}
+
+.bento__content {
+    background-color: $color-background;
+    padding: 1.5rem; 
+    max-height: 280px;  
+}
+
+.bento__content--hero {
+    background-color: $color-primary;
+    color: #000;
+}
+
+.bento--fun {
+    order: 4;
+    @media (min-width: $breakpoint-md) and (max-width:1023px) {
+        order: 2;
+    }
+}
+.bento--storyteller {
+    order: 1;
+}
+.bento--expert {
+    order: 2;
+    @media (min-width: $breakpoint-md) and (max-width:1023px) {
+        order: 3;
+    }
+}
+.bento--influencer {
+    order: 3;
+    @media (min-width: $breakpoint-md) and (max-width:1023px) {
+        order: 4;
+    }
+}
+
+.bento--definition {
+    order: 5;
+    @media (min-width: $breakpoint-md) and (max-width:1023px) {
+        order: 5;
+    }
+}
+
+.bento--industry {
+    order: 6;
+    @media (min-width: $breakpoint-md) and (max-width:1023px) {
+        order: 6;
+    }
+}

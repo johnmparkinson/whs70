@@ -1,0 +1,92 @@
+.cards {
+    @include flexbox();
+    @include flex-flow(wrap);
+    @include justify-content(space-evenly);
+    width:100%;        
+}
+
+.cards--hero {
+    @media (min-width:600px) {
+        border: solid #ccc .25rem;
+    }    
+}
+
+.card {
+    @media (max-width:$breakpoint-md) {
+        border-bottom: solid $color-secondary 1px;
+    }
+}
+
+.card__link {
+    display:block;
+    width:100%;
+    text-decoration: none;
+}
+
+.card__text-wrapper {
+    max-width: 345px;
+    margin: 0 auto;
+}
+
+.card__title {
+    margin-bottom:1rem;
+    color: $color-primary;
+}
+
+.card__description {
+    margin-bottom: 1rem;
+    color:$color-text;
+}
+
+.card__description--small {
+    font-size: .9rem;
+}
+
+.card--padded {
+    padding: 1rem 1rem 3rem 1rem;
+}
+
+.card--centered {
+    text-align: center;
+}
+
+.card--hero {
+    text-align: center;
+}
+
+.card--border {
+    border: solid $color-secondary-light 0;
+    border-bottom-width: .5rem;
+    @media (min-width:600px) {
+        border-width: .25rem;
+    }
+}
+
+.card--highlight {    
+    @media (min-width: $breakpoint-md) {
+        border: 2px solid $color-background;
+        &:hover {border-color: $color-secondary-light ;}    
+    }
+}
+
+.card--constrained {
+    max-width: 340px;
+    min-width: 300px;
+}
+
+.card--spaced {
+    margin: .5rem .5rem 1rem .5rem;
+}
+
+.card--half {
+    @include flex(1 0 50%);
+}
+
+.card--full {
+    @include flex(1 1 100%);
+}
+
+.card__image-container {
+    height: 210px;
+    overflow: hidden;
+}

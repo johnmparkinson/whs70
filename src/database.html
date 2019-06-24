@@ -1,0 +1,117 @@
+<html lang="en">
+    <head>
+        <title></title>
+        <link href="/css/main.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <div class="nav">
+                <ul class="nav__list">
+                    <li class="nav__list-item nav__list-item--home">
+                        <img src="./img/White_Station_High_School_logo.gif" class="nav__logo" alt="White Station High School Logo">                        
+                    </li>
+                    <li class="nav__list-item nav__list-item--home">
+                        <a class="nav__link nav__title" href="/">White Station High School Class of 1970</a>
+                    </li>
+                </ul>
+
+            </div>
+            <section>
+
+            </section>
+            <div id="app">
+                <section class="section section--padded">
+                    <h2 class="section__header">Current</h2>
+                    <div class="persons cards">
+                        <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.photo && !person.deceased"></person>
+                    </div>
+                </section>
+                <section class="section section--padded">
+                    <h2 class="section__header">No Current Photo</h2>
+                    <div class="persons cards">
+                        <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="!person.photo && !person.deceased"></person>
+                    </div>
+                </section>
+                <section class="section section--padded">
+                    <h2>Deceased</h2>
+                    <div class="persons cards">
+                        <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.deceased"></person>
+                    </div>
+                </section>
+            </div>
+        </main>        
+        <footer></footer>
+        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    
+        <script>
+            //document.getElementsByClassName("js-site-nav__list--toggle")[0].addEventListener('click', function (e) {e.preventDefault(); document.getElementsByTagName('body')[0].classList.toggle('menu--open');});
+        </script>
+
+        <script type="text/x-template" id="person-template">
+            <div class="person card card--padded card--centered card--constrained">
+                <div class="image__container">
+                    <img v-bind:src="photo_then" class="person__image person__image--then">
+                    <img v-if="person.photo && !person.deceased" v-bind:src="photo_now" class="person__image person__image--now">
+                </div>
+                <div>
+                    <span class="person__name person__name--first">{{ person.first_name }}</span>                    
+                    <span class="person__name person__name--maiden"> {{ person.maiden_name }}</span>
+                    <span class="person__name person__name--last"> {{ person.last_name }}</span>
+                </div>
+                <div class="death-info" v-if="person.deceased">
+                    <div class="death-info__date">{{person.deceased_date}}</div>
+                    <div><a class="death-info__obituary-link" v-bind:href="person.obituary_url">Obituary</a></div>
+                </div>
+            </div>
+        </script>
+
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    people : []
+                },
+                created: function () {
+                    var that = this;
+
+                    fetch('/data/people.json')
+                        .then(results => results.json())
+
+                        .then(data => {
+                            data.sort(function (a, b) {
+                                var nameA = a.id;
+                                var nameB = b.id;
+                                if (nameA < nameB) {
+                                    return -1;
+                                }
+                                if (nameA > nameB) {
+                                    return 1;
+                                }
+                                return 0;
+                            });
+                            this.people = data;
+                        });
+                }
+            });
+
+            Vue.component('person', {
+                props: ['person'],
+                computed: {
+                    photo_then: function() {
+                        return 'https://via.placeholder.com/150';
+                        return '../img/then/' + this.person.id + '.jpg';
+                    },
+                    photo_now: function() {
+                        return 'https://via.placeholder.com/150';
+                        return '../img/now/' + this.person.id + '.jpg';
+                    }
+                },
+                template: "#person-template"
+            })
+    
+        </script>
+    </body>
+</html>

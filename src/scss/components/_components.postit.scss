@@ -1,0 +1,23 @@
+.postit {
+    width: 153px;
+    height: 150px;
+    background-repeat: none;
+    margin-top:2rem;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 36px;
+    color: #111;
+    padding: 1rem;
+    line-height: 2.25rem;
+}
+
+.postit--yellow {
+    background-image: url(../img/postit/postit_yellow.png);
+}
+
+.postit--blue {
+    background-image: url(../img/postit/postit_blue.png);
+}
+
+.postit--pink {
+    background-image: url(../img/postit/postit_pink.png);
+}

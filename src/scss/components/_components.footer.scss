@@ -1,0 +1,15 @@
+.footer {
+    min-height:200px;
+    padding:2rem 0;
+    background-color: $color-secondary-light;
+    color: $color-primary-text-on;
+}
+
+.footer__heading {
+    min-height: 70px;
+}
+
+.footer__credit {
+    color:#aaa;
+    font-size: .8rem;
+}

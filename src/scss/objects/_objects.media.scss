@@ -1,0 +1,49 @@
+.media {
+    @include flexbox();
+    @include flex-wrap(wrap);
+    @include justify-content(space-around);
+
+    &__image {
+        @include flex(1,0,32%);
+        margin: 1rem .5rem;
+        @media (max-width: $breakpoint-md) {
+            order: 1;
+        }
+        @media (min-width:$breakpoint-md) {
+            margin: 1.5rem 1rem;            
+        }
+    }
+
+    &__description {
+        @include flex(2,0,60%);
+        margin: 1rem .5rem;
+        @media (max-width: $breakpoint-md) {
+            order: 2;
+        }
+        @media (min-width:$breakpoint-md) {
+            margin: 1.5rem 1rem;
+        }
+    }
+
+    &__object {
+        @include flexbox();
+        @include flex-wrap(wrap);
+        @include justify-content(space-around);
+        padding: 1.5rem;
+        width: 100%;
+        @media (max-width:1023px) {
+            border-bottom: solid 2px $color-secondary;
+        }
+    }
+
+    &__text {
+        margin-top: 1rem;
+    }
+}
+
+.media__image--small {
+    @media (min-width: $breakpoint-md) {
+        max-width: 240px;
+    }
+}
+

@@ -1,0 +1,23 @@
+.btn__container {
+    @include flexbox();
+    @include justify-content(space-evenly);
+    @include flex-wrap(wrap);
+    //display:flex;
+    //justify-content: space-evenly;
+    //flex-wrap: wrap;
+}
+
+.btn {
+    text-align: center;
+    padding: 1rem 0;
+    border: 2px solid $color-primary-highlight;
+    border-radius: 40px;
+    display:inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 225px;
+    color: $color-primary-highlight;
+    margin: .5rem 1rem;
+
+}
