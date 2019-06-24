@@ -91,7 +91,7 @@
 }
 
 .nav__logo {
-    width:88px;
+    width:100px;
     border-right: solid 2px #fff;
     padding-right: 12px;
     margin-top: 5px;
@@ -147,4 +147,9 @@
 .nav__search-icon {
     fill: $color-primary;
     font-size:18px !important;
+}
+
+.nav-secondary {
+    background-color: $color-primary;
+    color: $color-primary-text-on;
 }
