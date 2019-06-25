@@ -70,8 +70,12 @@
 }
 
 .card--constrained {
-    max-width: 370px;
+    max-width: 500px;
     min-width: 300px;
+}
+
+.card--constrained-small {
+    max-width: 400px;
 }
 
 .card--spaced {

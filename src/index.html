@@ -39,7 +39,7 @@
                         <p>Some text here about the reunion.</p>
                     </div>
                 </div>
-                <div class="card card--padded card--full card--centered">
+                <div class="card card--padded card--full card--centered card--constrained-small">
                     <h2 class="card__title">Get Social</h2>
                     <div class="card__description">
                         <p>Contact us or see what's going on in Facebook.</p>
@@ -53,15 +53,17 @@
             </section>
             <div id="app">
                 <section class="section section--padded">
-                    <h2 class="section__header">Current</h2>
+                    <h2 class="section__header">
+                        Current Photo
+                    </h2>
                     <div class="persons cards">
-                        <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.photo && !person.deceased"></person>
+                        <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.photo_now && !person.deceased"></person>
                     </div>
                 </section>
                 <section class="section section--padded">
                     <h2 class="section__header">No Current Photo</h2>
-                    <div class="persons cards">
-                        <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="!person.photo && !person.deceased"></person>
+                    <div class="persons cards collapsed">
+                        <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="!person.photo_now && !person.deceased"></person>
                     </div>
                 </section>
                 <section class="section section--padded">
@@ -84,8 +86,8 @@
         <script type="text/x-template" id="person-template">
             <div class="person card card--padded card--centered card--constrained">
                 <div class="image__container">
-                    <img v-bind:src="photo_then" class="person__image person__image--then">
-                    <img v-if="person.photo && !person.deceased" v-bind:src="photo_now" class="person__image person__image--now">
+                    <img v-bind:src="photo_then_url" class="person__image person__image--then">
+                    <img v-if="person.photo_now && !person.deceased" v-bind:src="photo_now_url" class="person__image person__image--now">
                 </div>
                 <div>
                     <span class="person__name person__name--first">{{ person.first_name }}</span>                    
@@ -103,7 +105,12 @@
             new Vue({
                 el: '#app',
                 data: {
-                    people : []
+                    people : [],
+                    collapsed: {
+                        now: false,
+                        now_without: true,
+                        deceased: true
+                    }
                 },
                 created: function () {
                     var that = this;
@@ -131,13 +138,13 @@
             Vue.component('person', {
                 props: ['person'],
                 computed: {
-                    photo_then: function() {
-                        return 'https://via.placeholder.com/150';
-                        return '../img/then/' + this.person.id + '.jpg';
+                    photo_then_url: function() {
+                        //return 'https://via.placeholder.com/150';
+                        return './img/then/' + this.person.id + '.jpg';
                     },
-                    photo_now: function() {
-                        return 'https://via.placeholder.com/150';
-                        return '../img/now/' + this.person.id + '.jpg';
+                    photo_now_url: function() {
+                        //return 'https://via.placeholder.com/150';
+                        return './img/now/' + this.person.id + '.jpg';
                     }
                 },
                 template: "#person-template"

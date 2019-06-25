@@ -114,7 +114,7 @@ const compileAssets = () => {
 
 const compileCsv = () => {
     return gulp.src(paths.csv.src)
-        .pipe(csvtojson({ toArrayString: true }))
+        .pipe(csvtojson({ toArrayString: true, ignoreEmpty: true }))
         .pipe(gulp.dest(paths.csv.dest))
 }
 

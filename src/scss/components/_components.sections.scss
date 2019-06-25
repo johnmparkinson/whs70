@@ -9,3 +9,17 @@
 .section--padded {
     padding: 1rem;
 }
+
+.section--collapsable {
+    
+    
+}
+
+.section--collapsed {
+    .collapse__icon--less {
+        display:none;
+    }
+    .collapsable__area {
+        display:none;
+    }
+}
