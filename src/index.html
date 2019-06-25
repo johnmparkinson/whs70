@@ -90,9 +90,12 @@
                     <img v-if="person.photo_now && !person.deceased" v-bind:src="photo_now_url" class="person__image person__image--now">
                 </div>
                 <div>
-                    <span class="person__name person__name--first">{{ person.first_name }}</span>                    
-                    <span class="person__name person__name--maiden"> {{ person.maiden_name }}</span>
+                    <span class="person__name person__name--first">{{ person.first_name }}</span>
+                    <span class="person__name person__name--first"> {{ person.nick_name }}</span>
+                    <span class="person__name person__name--first"> {{ person.middle_name }}</span>                    
                     <span class="person__name person__name--last"> {{ person.last_name }}</span>
+                    <span class="person__name person__name--married"> {{ person.married_name }}</span>
+                    <span class="person__name person__name--first"> {{ person.suffix }}</span>
                 </div>
                 <div class="death-info" v-if="person.deceased">
                     <div class="death-info__date">{{person.deceased_date}}</div>
