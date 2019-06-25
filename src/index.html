@@ -142,11 +142,13 @@
                 props: ['person'],
                 computed: {
                     photo_then_url: function() {
-                        //return 'https://via.placeholder.com/150';
-                        return './img/then/' + this.person.id + '.jpg';
+                        if (this.person.photo_then) {
+                            return './img/then/' + this.person.id + '.jpg';
+                        } else {
+                            return './img/memorial.jpg';
+                        }
                     },
-                    photo_now_url: function() {
-                        //return 'https://via.placeholder.com/150';
+                    photo_now_url: function() {                                                
                         return './img/now/' + this.person.id + '.jpg';
                     }
                 },
