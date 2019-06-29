@@ -6,3 +6,15 @@
 .person__image {
     width:150px;
 }
+
+.person__columns {
+    @media(min-width:415px) {
+        column-count: 2;
+    }
+    @media(min-width:768px) {
+        column-count: 3;
+    }
+    @media(min-width:1024px) {
+        column-count:4;
+    }
+}

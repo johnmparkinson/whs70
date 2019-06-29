@@ -63,7 +63,7 @@
                 </section>
                 <section class="section section--padded">
                     <h2 class="section__header">No Current Photo</h2>
-                    <div class="persons" style="column-count: 3">
+                    <div class="persons person__columns">
                         <personname v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="!person.photo_now && !person.deceased"></personname>
                     </div>
                     <!-- <div class="persons cards collapsed">
