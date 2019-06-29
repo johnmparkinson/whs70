@@ -43,12 +43,12 @@
 
 
                     <div>
-                        <div class="icon__container"><a href="https://www.facebook.com/groups/28463570769/"><img class="icon" style="width:60px;" src="./img/f_logo_RGB-Blue_58.png"></a></div>
-                        <div class="icon__container"><a href="mailto:lindakgoodwin@comcast.net?subject=White%20Station%2070%20Website"><img class="icon" style="width:60px;" src="./img/baseline_mail_black_48dp.png"></a></div>
-                        <div class="icon__container"><a href="http://team5045.com/#/home/"><img class="icon" style="width:60px;" src="./img/RoboticsAd.jpg"></a></div>
-                        <div class="icon__container"><a href="https://www.classmates.com/places/school/White-Station-High-School/4473"><img class="icon" style="width:60px;" src="./img/classmatesicon.png"></a></div>
-                        <div class="icon__container"><a href="https://en.wikipedia.org/wiki/White_Station_High_School"><img class="icon" style="width:60px;" src="./img/Wikipedia-logo.png"></a></div>
-                        <div class="icon__container"><a href="https://www.alumniclass.com/white-station-high-school-spartans-memphis-tn/"><img class="icon" style="width:60px;" src="./img/Wikipedia-logo.png"></a></div>
+                        <div class="icon__container"><a href="https://www.facebook.com/groups/28463570769/"><img class="icon" src="./img/f_logo_RGB-Blue_58.png"></a></div>
+                        <div class="icon__container"><a href="mailto:lindakgoodwin@comcast.net?subject=White%20Station%2070%20Website"><img class="icon" src="./img/baseline_mail_black_48dp.png"></a></div>
+                        <div class="icon__container"><a href="http://team5045.com/#/home/"><img class="icon" src="./img/RoboticsAd.jpg"></a></div>
+                        <div class="icon__container"><a href="https://www.classmates.com/places/school/White-Station-High-School/4473"><img class="icon" src="./img/classmatesicon.png"></a></div>
+                        <div class="icon__container"><a href="https://en.wikipedia.org/wiki/White_Station_High_School"><img class="icon" src="./img/Wikipedia-logo.png"></a></div>
+                        <div class="icon__container"><a href="https://www.alumniclass.com/white-station-high-school-spartans-memphis-tn/"><img class="icon" src="./img/Wikipedia-logo.png"></a></div>
                     </div>
                 </div>
             </section>
@@ -63,7 +63,7 @@
                 </section>
                 <section class="section section--padded">
                     <h2 class="section__header">No Current Photo</h2>
-                    <div class="persons">
+                    <div class="persons" style="column-count: 3">
                         <personname v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="!person.photo_now && !person.deceased"></personname>
                     </div>
                     <!-- <div class="persons cards collapsed">
