@@ -1,8 +1,11 @@
 .cards {
     @include flexbox();
     @include flex-flow(wrap);
-    @include justify-content(space-evenly);
     width:100%;        
+}
+
+.cards--even {
+    @include justify-content(space-evenly);
 }
 
 .cards--hero {
@@ -20,6 +23,18 @@
 .cards--stacked {
     @media (min-width:$breakpoint-md) {
         @include flex-direction(column);
+    }
+}
+
+.card--4 {
+    @media (min-width:$breakpoint-md) {
+        @include flex(4);    
+    }
+}
+
+.card--1 {
+    @media (min-width:$breakpoint-md) {
+        @include flex(1);    
     }
 }
 
@@ -89,7 +104,7 @@
 }
 
 .card--half {
-    @include flex(1 0 50%);
+    @include flex(1 0 48%);
 }
 
 .card--full {
