@@ -17,6 +17,12 @@
     }
 }
 
+.cards--stacked {
+    @media (min-width:$breakpoint-md) {
+        @include flex-direction(column);
+    }
+}
+
 .card__link {
     display:block;
     width:100%;

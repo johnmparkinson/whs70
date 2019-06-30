@@ -1,8 +1,0 @@
-.columns {
-    @media(min-width:1024px) {
-        column-count:4;
-    }
-    @media(min-width:$breakpoint-md) {
-        column-count: 3;
-    }
-}

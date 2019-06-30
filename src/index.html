@@ -42,7 +42,7 @@
                 <div class="card card--padded card--spaced card--centered">
 
 
-                    <div>
+                    <div class="cards cards--stacked">
                         <div class="icon__container"><a href="https://www.facebook.com/groups/28463570769/"><img class="icon" src="./img/f_logo_RGB-Blue_58.png"></a></div>
                         <div class="icon__container"><a href="mailto:lindakgoodwin@comcast.net?subject=White%20Station%2070%20Website"><img class="icon" src="./img/baseline_mail_black_48dp.png"></a></div>
                         <div class="icon__container"><a href="http://team5045.com/#/home/"><img class="icon" src="./img/RoboticsAd.jpg"></a></div>
@@ -54,27 +54,44 @@
             </section>
             <div id="app">
                 <section class="section section--padded">
-                    <h2 class="section__header">
-                        Current Photo
-                    </h2>
-                    <div class="persons cards">
-                        <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.photo_now && !person.deceased"></person>
+                    <div class="tab__bar">
+                        <button v-on:click="activeTab=0" class="tab__button">All Classmates</button>
+                        <button v-on:click="activeTab=1" class="tab__button">Memorials</button>
+                        <button v-on:click="activeTab=2" class="tab__button">How We Look Now</button>
+                    </div>
+                    <div v-if="activeTab===0" class="tab__content">
+                        <div class="persons person__columns">
+                            <personname v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="!person.photo_now && !person.deceased"></personname>
+                        </div>
+                        all
+                    </div>
+                    <div v-if="activeTab===1" class="tab__content">
+                        <div class="persons cards">
+                            <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.deceased"></person>
+                        </div>
+                    </div>
+                    <div v-if="activeTab===2" class="tab__content">
+                        <div class="persons cards">
+                            <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.photo_now && !person.deceased"></person>
+                        </div>
                     </div>
                 </section>
                 <section class="section section--padded">
+                    <h2 class="section__header">
+                        Current Photo
+                    </h2>
+
+                </section>
+                <section class="section section--padded">
                     <h2 class="section__header">No Current Photo</h2>
-                    <div class="persons person__columns">
-                        <personname v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="!person.photo_now && !person.deceased"></personname>
-                    </div>
+
                     <!-- <div class="persons cards collapsed">
                         <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="!person.photo_now && !person.deceased"></person>
                     </div> -->
                 </section>
                 <section class="section section--padded">
                     <h2>Deceased</h2>
-                    <div class="persons cards">
-                        <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.deceased"></person>
-                    </div>
+
                 </section>
             </div>
         </main>        
@@ -130,7 +147,8 @@
                         now: false,
                         now_without: true,
                         deceased: true
-                    }
+                    },
+                    activeTab: 0
                 },
                 created: function () {
                     var that = this;
