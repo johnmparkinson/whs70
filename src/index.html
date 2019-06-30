@@ -21,38 +21,49 @@
                 </ul>
 
             </div>
-            <section class="section section--hero" style="background-image:url('./img/courtyard.jpg');height:400px;background-position-y: -190px">
+            <section class="section section--hero section--hero-home" class="section--hero-home">
                 <div>
-                    <h1 style="padding-top:100px;padding-left:100px;color:#fff;">Get Ready for the Reunion!!!</h1>
+                    <h1 class="section__header--hero">Get Ready for the Reunion!!!</h1>
                 </div>  
             </section>
 
             <section class="cards">
-                <div class="card card--padded card--spaced card--constrained card--half">
-                    <h2 class="card__title">About the Site</h2>
-                    <div class="card__description">
-                        <p>
-                            The purpose of this web site is to communicate with the <a href="http://www.scsk12.org/schools/whitestation.hs/site/index.shtml">White Station High School</a> - Class of 1970 in Memphis, Tennessee.
-                        </p>
-                        <p>
-                            We primarily use the website to share news, such as about reunions and other gatherings that we might have. See the <a href="#planningCommittee">planning committee</a> for class events. If you are a classmate who wants to join the committee or just receive information about our events, <a href="mailto:lindakgoodwin@comcast.net">let us know</a>.            
-                        </p>
+                <div class="card card--4">
+                    <div class="cards cards--evenly">
+                        <div class="card card--padded card--spaced card--half">
+                            <h2 class="card__title">About the Site</h2>
+                            <div class="card__description">
+                                <p>
+                                    The purpose of this web site is to communicate with the <a href="http://www.scsk12.org/schools/whitestation.hs/site/index.shtml">White Station High School</a> - Class of 1970 in Memphis, Tennessee.
+                                </p>
+                                <p>
+                                    Peel the onion vertical integration, or productize baseline the procedure and samepage your department, but t-shaped individual. Let's schedule a standup during the sprint to review our kpis we need to leverage our synergies root-and-branch review cross functional teams enable out of the box brainstorming i am dead inside we need to touch base off-line before we fire the new ux experience value-added. To be inspired is to become creative, innovative and energized we want this philosophy to trickle down to all our stakeholders talk to the slides, we need to have a Come to Jesus meeting with Phil about his attitude, for criticality nor i’ve been doing some research this morning and we need to better. Talk to the slides onward and upward, productize the deliverables and focus on the bottom line this proposal is a win-win situation which will cause a stellar paradigm shift, and produce a multi-fold increase in deliverables. Closing these latest prospects is like putting socks on an octopus. <a href="mailto:lindakgoodwin@comcast.net">let us know</a>.            
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card card--padded card--spaced card--half">
+                            <h2 class="card__title">News</h2>
+                            <div class="card__description">
+                                <p>Table the discussion big boy pants five-year strategic plan but commitment to the cause but product management breakout fastworks yet quick win, for 4-blocker. Nail jelly to the hothouse wall closing these latest prospects is like putting socks on an octopus, but in this space so cloud strategy high performance keywords. Herding cats ladder up / ladder back to the strategy. What are the expectations move the needle, for at the end of the day, nor can we take this offline. Strategic high-level 30,000 ft view downselect nor locked and loaded, this is meaningless so marketing computer development html roi feedback team website but staff engagement. Meeting assassin hit the ground running touch base ramp up, and we want to see more charts we have put the apim bol, temporarily so that we can later put the monitors on. Action item meeting assassin what's our go to market strategy? for we’re all in this together, even if our businesses function differently cloud strategy digital literacy value-added. We need to start advertising on social media parallel path or hammer out, yet we have put the apim bol, temporarily so that we can later put the monitors on.</p>
+                            </div>
+                        </div>
+                        <div class="card card--padded card--spaced card--half">
+                            <img src="img/front.jpg" style="width:100%">
+                        </div>                
+                        <div class="card card--padded card--spaced card--half">
+                            <img src="img/front.jpg" style="width:100%">
+                        </div>                
                     </div>
                 </div>
-                <div class="card card--padded card--spaced card--constrained card--half">
-                    <h2 class="card__title">News</h2>
-                    <div class="card__description">
-                        <p>Some text here about the reunion.</p>
-                    </div>
-                </div>
-                <div class="card card--padded card--spaced card--centered">
+                
+    
+                <div class="card card--1 card--padded card--spaced card--centered">
                     <div class="cards cards--stacked">
                         <div class="icon__container"><a href="https://www.facebook.com/groups/28463570769/"><img class="icon" src="./img/f_logo_RGB-Blue_58.png"></a></div>
                         <div class="icon__container"><a href="mailto:lindakgoodwin@comcast.net?subject=White%20Station%2070%20Website"><img class="icon" src="./img/baseline_mail_black_48dp.png"></a></div>
                         <div class="icon__container"><a href="http://team5045.com/#/home/"><img class="icon" src="./img/RoboticsAd.jpg"></a></div>
                         <div class="icon__container"><a href="https://www.classmates.com/places/school/White-Station-High-School/4473"><img class="icon" src="./img/classmatesicon.png"></a></div>
                         <div class="icon__container"><a href="https://en.wikipedia.org/wiki/White_Station_High_School"><img class="icon" src="./img/Wikipedia-logo.png"></a></div>
-                        <div class="icon__container"><a href="https://www.alumniclass.com/white-station-high-school-spartans-memphis-tn/"><img class="icon" src="./img/Wikipedia-logo.png"></a></div>
                     </div>
                 </div>
             </section>
@@ -116,7 +127,7 @@
                 </div>
                 <div class="death-info" v-if="person.deceased">
                     <div class="death-info__date">{{person.deceased_date}}</div>
-                    <div><a class="death-info__obituary-link" v-bind:href="person.obituary_url">Obituary</a></div>
+                    <div v-if="person.obituary_url"><a class="death-info__obituary-link" v-bind:href="person.obituary_url">Obituary</a></div>
                 </div>
             </div>
         </script>

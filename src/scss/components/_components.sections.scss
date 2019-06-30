@@ -6,20 +6,25 @@
     background-repeat: no-repeat;
 }
 
+.section--hero-home {
+    background-image:url('../../img/groupphoto.jpg');
+    @media(min-width: $breakpoint-md) {
+        height:400px;
+        background-position-y: -190px
+    }
+}
+
+.section__header--hero {
+    color:#fff;
+    padding: 20px;
+    @media(min-width: $breakpoint-md) {
+        padding-top:50px;
+        padding-left:100px;
+    }
+}
+
 .section--padded {
     padding: 1rem;
 }
 
-.section--collapsable {
-    
-    
-}
 
-.section--collapsed {
-    .collapse__icon--less {
-        display:none;
-    }
-    .collapsable__area {
-        display:none;
-    }
-}
