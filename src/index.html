@@ -74,22 +74,21 @@
                         </div>
                     </div>
                     <div v-if="activeTab===2" class="tab__content">
-                        <h2>Send us an updated photo!!!</h2>
+                        <h2 class="card__title">Send us an updated photo!!!</h2>
                         <div class="persons cards">
                             <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.photo_now && !person.deceased"></person>
                         </div>
                     </div>
                 </section>
             </div>
-            <section id="planningCommittee">
-                <h2>Your Reunion Committee</h2>
-                <ul>
-                    <li>Joe Bob</li>
-                    <li>Cindy Loo</li>
-                </ul>
-                <p>
-                        includes Vanden Willey, Linda (Kantor) Goodwin-Parkinson, Bob Plunk, Sharon (Pepper) Goldstein, Cindy (Anderson) McInntyre, Randy Stepherson, Barby (Fooks) Perlberg, Beverly (Ball) Garrison, Debbie Robinson, Gail (Sacks) Kirshner, Kathy (Jobe) Hays, Leslie Ballin, Stephanie (Solomon) Brannon, Pege (Sternberger) Vaughan, Jimmy Lewis, Brad Hanover, and Steve Fergus.
-                </p>
+            <section class="section section--padded cards" id="planningCommittee">
+                <div class="card">
+                    <h2 class="card__title">Your Reunion Committee</h2>
+                    <p class="card__description">
+                        Vanden Willey, Linda (Kantor) Goodwin-Parkinson, Bob Plunk, Sharon (Pepper) Goldstein, Cindy (Anderson) McInntyre, Randy Stepherson, Barby (Fooks) Perlberg, Beverly (Ball) Garrison, Debbie Robinson, Gail (Sacks) Kirshner, Kathy (Jobe) Hays, Leslie Ballin, Stephanie (Solomon) Brannon, Pege (Sternberger) Vaughan, Jimmy Lewis, Brad Hanover, and Steve Fergus.
+                    </p>
+
+                </div>
             </section>
         </main>        
         <footer></footer>
