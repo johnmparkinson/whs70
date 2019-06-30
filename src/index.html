@@ -21,6 +21,12 @@
                 </ul>
 
             </div>
+            <section class="section section--hero" style="background-image:url('./img/courtyard.jpg');height:400px;background-position-y: -190px">
+                <div>
+                    <h1 style="padding-top:100px;padding-left:100px;color:#fff;">Get Ready for the Reunion!!!</h1>
+                </div>  
+            </section>
+
             <section class="cards">
                 <div class="card card--padded card--spaced card--constrained card--half">
                     <h2 class="card__title">About the Site</h2>
@@ -29,7 +35,7 @@
                             The purpose of this web site is to communicate with the <a href="http://www.scsk12.org/schools/whitestation.hs/site/index.shtml">White Station High School</a> - Class of 1970 in Memphis, Tennessee.
                         </p>
                         <p>
-                            Learn some interesting facts about White Station High School in <a href="http://en.wikipedia.org/wiki/White_Station_High_School">wikipedia</a>. We primarily use the website to share news, such as about reunions and other gatherings that we might have. The planning committee for class events includes Vanden Willey, Linda (Kantor) Goodwin-Parkinson, Bob Plunk, Sharon (Pepper) Goldstein, Cindy (Anderson) McInntyre, Randy Stepherson, Barby (Fooks) Perlberg, Beverly (Ball) Garrison, Debbie Robinson, Gail (Sacks) Kirshner, Kathy (Jobe) Hays, Leslie Ballin, Stephanie (Solomon) Brannon, Pege (Sternberger) Vaughan, Jimmy Lewis, Brad Hanover, and Steve Fergus. If you are a classmate who wants to join the committee or just receive information about our events, <a href="mailto:lindakgoodwin@comcast.net">let us know</a>.            
+                            We primarily use the website to share news, such as about reunions and other gatherings that we might have. See the <a href="#planningCommittee">planning committee</a> for class events. If you are a classmate who wants to join the committee or just receive information about our events, <a href="mailto:lindakgoodwin@comcast.net">let us know</a>.            
                         </p>
                     </div>
                 </div>
@@ -40,8 +46,6 @@
                     </div>
                 </div>
                 <div class="card card--padded card--spaced card--centered">
-
-
                     <div class="cards cards--stacked">
                         <div class="icon__container"><a href="https://www.facebook.com/groups/28463570769/"><img class="icon" src="./img/f_logo_RGB-Blue_58.png"></a></div>
                         <div class="icon__container"><a href="mailto:lindakgoodwin@comcast.net?subject=White%20Station%2070%20Website"><img class="icon" src="./img/baseline_mail_black_48dp.png"></a></div>
@@ -63,7 +67,6 @@
                         <div class="persons person__columns">
                             <personname v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="!person.photo_now && !person.deceased"></personname>
                         </div>
-                        all
                     </div>
                     <div v-if="activeTab===1" class="tab__content">
                         <div class="persons cards">
@@ -71,29 +74,23 @@
                         </div>
                     </div>
                     <div v-if="activeTab===2" class="tab__content">
+                        <h2>Send us an updated photo!!!</h2>
                         <div class="persons cards">
                             <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.photo_now && !person.deceased"></person>
                         </div>
                     </div>
                 </section>
-                <section class="section section--padded">
-                    <h2 class="section__header">
-                        Current Photo
-                    </h2>
-
-                </section>
-                <section class="section section--padded">
-                    <h2 class="section__header">No Current Photo</h2>
-
-                    <!-- <div class="persons cards collapsed">
-                        <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="!person.photo_now && !person.deceased"></person>
-                    </div> -->
-                </section>
-                <section class="section section--padded">
-                    <h2>Deceased</h2>
-
-                </section>
             </div>
+            <section id="planningCommittee">
+                <h2>Your Reunion Committee</h2>
+                <ul>
+                    <li>Joe Bob</li>
+                    <li>Cindy Loo</li>
+                </ul>
+                <p>
+                        includes Vanden Willey, Linda (Kantor) Goodwin-Parkinson, Bob Plunk, Sharon (Pepper) Goldstein, Cindy (Anderson) McInntyre, Randy Stepherson, Barby (Fooks) Perlberg, Beverly (Ball) Garrison, Debbie Robinson, Gail (Sacks) Kirshner, Kathy (Jobe) Hays, Leslie Ballin, Stephanie (Solomon) Brannon, Pege (Sternberger) Vaughan, Jimmy Lewis, Brad Hanover, and Steve Fergus.
+                </p>
+            </section>
         </main>        
         <footer></footer>
         <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
