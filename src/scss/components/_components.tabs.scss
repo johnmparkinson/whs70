@@ -3,7 +3,10 @@
 }
 
 .tab__button {
-    border: solid 1px #ccc;
+    border: solid 1px $color-primary;
+    background-color: $color-primary;
+    color: $color-primary-text-on;
+    cursor: pointer;
 }
 
 .tabactive {

@@ -7,10 +7,10 @@
 }
 
 .section--hero-home {
-    background-image:url('../../img/groupphoto.jpg');
+    background-image:url('../../img/groupphoto40.jpg');
     @media(min-width: $breakpoint-md) {
-        height:400px;
-        background-position-y: -190px
+        height:394px;
+        background-position-x: center;
     }
 }
 

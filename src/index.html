@@ -44,11 +44,11 @@
                         <div class="card card--padded card--spaced card--half">
                             <h2 class="card__title">News</h2>
                             <div class="card__description">
-                                <ul>
-                                    <li>Our 50th Class Reunion is on October 16 and October 17, 2020. For information, <a href="mailto:lindakgoodwin@comcast.net?subject=Class%20Reunion%20Information%20Inquiry">email us.</a></li>
-                                    <li>We support the SchoolSeed project, <a href="https://ignite.schoolseed.org/project/7994?fbclid=IwAR33UuGqNxZlX5JMB0KWRqeVKmyop0ZFmABRJEVC866RAZdT2dB3dFLyMuI">White Station High School Community Courtyard</a>.</li>
-                                    <li>Interesting facts <a href="https://en.wikipedia.org/wiki/White_Station_High_School">about White Station High School</a>.</li>
-                                    </ul>
+                                <ul class="list--unordered">
+                                    <li class="list__item">Our 50th Class Reunion is on October 16 and October 17, 2020. For information, <a href="mailto:lindakgoodwin@comcast.net?subject=Class%20Reunion%20Information%20Inquiry">email us.</a></li>
+                                    <li class="list__item">We support the SchoolSeed project, <a href="https://ignite.schoolseed.org/project/7994?fbclid=IwAR33UuGqNxZlX5JMB0KWRqeVKmyop0ZFmABRJEVC866RAZdT2dB3dFLyMuI">White Station High School Community Courtyard</a>.</li>
+                                    <li class="list__item">Interesting facts <a href="https://en.wikipedia.org/wiki/White_Station_High_School">about White Station High School</a>.</li>
+                                </ul>
                             </div>
                         </div>
                         <div class="card card--padded card--spaced card--half">
@@ -80,7 +80,7 @@
                     </div>
                     <div v-if="activeTab===0" class="tab__content">
                         <div class="persons person__columns">
-                            <personname v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="!person.photo_now && !person.deceased"></personname>
+                            <personname v-for="person in people" v-bind:key="person.id" v-bind:person="person"></personname>
                         </div>
                     </div>
                     <div v-if="activeTab===1" class="tab__content">
