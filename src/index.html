@@ -90,7 +90,7 @@
                         </div>
                     </div>
                     <div v-if="activeTab===2" class="tab__content">
-                        <h2 class="card__title">Send us an updated photo!!!</h2>
+                        <h2 class="card__title"><a href="mailto:lindakgoodwin@comcast.net?subject=Updated%20Photo">Send us an updated photo!!!</a></h2>
                         <div class="persons cards">
                             <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.photo_now && !person.deceased"></person>
                         </div>
