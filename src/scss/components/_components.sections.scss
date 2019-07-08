@@ -8,9 +8,10 @@
 
 .section--hero-home {
     background-image:url('../../img/groupphoto40.jpg');
+    height: 100px;
+    background-position-x: center;
     @media(min-width: $breakpoint-md) {
-        height:394px;
-        background-position-x: center;
+        height:394px;        
     }
 }
 
