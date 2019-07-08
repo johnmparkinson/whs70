@@ -112,13 +112,14 @@
 }
 
 .nav__title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     padding-right:1rem;
     padding-top:0;
     @media (min-width: $breakpoint-md) {
         padding-right: 3rem;
     }
     vertical-align: top;
+    color:$color-primary;
 }
 
 .nav__title--long {
