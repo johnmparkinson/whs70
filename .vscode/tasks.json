@@ -8,7 +8,6 @@
             "type": "shell",
             "command": "firebase deploy",
             "dependsOn": [
-                "podcastXML",
                 "build"
             ],
             "group": {
@@ -20,11 +19,6 @@
             "label": "build",
             "type": "npm",
             "script": "publish"
-        },
-        {
-            "label": "podcastXML",
-            "type": "shell",
-            "command": "node podcasttool"            
         }
     ]
 }
