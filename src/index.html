@@ -29,21 +29,20 @@
                         <div class="card card--padded card--spaced card--half">
                             <h2 class="card__title">About the Site</h2>
                             <div class="card__description">
-                                <p>
-                                    This website was created for the <a href="http://www.scsk12.org/schools/whitestation.hs/site/index.shtml">White Station High School</a> - Class of 1970 in Memphis, Tennessee. The purpose of the website is to share news that is relevant to our class.
+                                <p>Disclaimer: This website is not affiliated with <a href="http://www.scsk12.org/schools/whitestation.hs/site/index.shtml">White Station High School</a> in Memphis, Tennessee, other than the fact that the website was created for the Class of 1970. The purpose of the website is to share news that is relevant to our class.
                                 </p>
                                 <p>
-                                    Over the years, we have seen one another through several class reunions that we happily organized. We celebrated the milestone anniversaries of our graduation together and we celebrated turning 60 together. We have shared joy as well as sadness over the years, having lost several students who we lovingly remember as our friends.
+                                    Over the years, we have had several class reunions. We celebrated milestone anniversaries of our graduation and we celebrated turning 60 together. We have shared joy as well as sadness over the years, having lost classmates who we lovingly remember as our friends.
                                 </p>
-                                <p>How much have we celebrated in the past? Reunions were held in 1980 (Evan Murray’s home; softball at St. Louis School), 1990 (The Peabody Hotel), 2000 (Leslie Ballin’s home; Jewish Community Center), 2010 (Leslie Ballin’s home; The Tower Room), 2012 Our 60th Birthday Party (Pickering Center), and 2015 (Leslie Balllin’s home; Ridgeway Country Club).</p>
-                                <p>We continue to make an effort to keep in touch with one another, decade by decade. Our next milestone is approaching. It is the time to locate every classmate who we can find. It is time to reconnect. It is time to celebrate. We are the Spartans from the Class of 1970 at White Station High School in Memphis, Tennessee, and we can do this together. </p>
+                                <p>Reunions were held in 1980 (Evan Murray’s home; softball at St. Louis School), 1990 (The Peabody Hotel), 2000 (Leslie Ballin’s home; Jewish Community Center), 2010 (Leslie Ballin’s home; The Tower Room), 2012 Our 60th Birthday Party (Pickering Center), and 2015 (Leslie Balllin’s home; Ridgeway Country Club).</p>
+                                <p>We continue to make an effort to keep in touch with one another, decade by decade. Our next milestone is approaching. It is the time to locate every classmate who we can find. It is time to reconnect and celebrate. We are the Spartans from the Class of 1970 at White Station High School in Memphis, Tennessee, and we can do this together. </p>
                             </div>
                         </div>
                         <div class="card card--padded card--spaced card--half">
                             <h2 class="card__title">News</h2>
                             <div class="card__description">
                                 <ul class="list--unordered">
-                                    <li class="list__item">We are approaching our 50th anniversary as classmates and friends. Mark your calendars. Join us in Memphis for October 16 and October 17, 2020. Help us locate classmates who we have been unable to find. <a href="mailto:lindakgoodwin@comcast.net?subject=Class%20Reunion%20Information%20Inquiry">Email us</a> if you have questions.</li>
+                                    <li class="list__item">We are approaching our 50th anniversary as classmates and friends. Mark your calendars. Join us in Memphis for October 16 and October 17, 2020. Help us locate classmates who we have been unable to find. <a href="mailto:whitestationhighschool1970@gmail.com?subject=Class%20Reunion%20Information%20Inquiry">Email us</a> if you have questions.</li>
                                     <li class="list__item">We have continued to care about White Station High School beyond our graduation years ago. For example, we have shown our support for the <a href="https://team5045.com/#/home"> WSHS Robotics team.</a></li> 
                                     <li class="list__item">We support the innovative SchoolSeed project, <a href="https://ignite.schoolseed.org/project/7994?fbclid=IwAR33UuGqNxZlX5JMB0KWRqeVKmyop0ZFmABRJEVC866RAZdT2dB3dFLyMuI">White Station High School Community Courtyard</a>. See related photograph below.</li>
                                     <li class="list__item">White Station High School in Memphis, Tennessee has an interesting story. Learn more by reading the article in Wikipedia, <a href="https://en.wikipedia.org/wiki/White_Station_High_School">White Station High School</a>.</li>
@@ -70,7 +69,7 @@
                 <div class="card card--1 card--padded card--spaced card--centered">
                     <div class="cards cards--stacked">
                         <div class="icon__container"><a href="https://www.facebook.com/groups/28463570769/"><img class="icon" src="./img/f_logo_RGB-Blue_58.png"></a></div>
-                        <div class="icon__container"><a href="mailto:lindakgoodwin@comcast.net?subject=White%20Station%2070%20Website"><img class="icon" src="./img/baseline_mail_black_48dp.png"></a></div>
+                        <div class="icon__container"><a href="mailto:whitestationhighschool1970@gmail.com?subject=White%20Station%2070%20Website"><img class="icon" src="./img/baseline_mail_black_48dp.png"></a></div>
                         <div class="icon__container"><a href="https://ignite.schoolseed.org/project/7994"><img class="icon" src="./img/rlnbgwebycferdbqlx3d.jpg"></a></div>
                         <!-- <div class="icon__container"><a href="http://team5045.com/#/home/"><img class="icon" src="./img/RoboticsAd.jpg"></a></div> -->
                         <div class="icon__container"><a href="https://www.classmates.com/places/school/White-Station-High-School/4473"><img class="icon" src="./img/classmatesicon.png"></a></div>
@@ -96,7 +95,7 @@
                         </div>
                     </div>
                     <div v-if="activeTab===2" class="tab__content">
-                        <h2 class="card__title"><a href="mailto:lindakgoodwin@comcast.net?subject=Updated%20Photo">Send us an updated photo!!!</a></h2>
+                        <h4 class="card__title"><a href="mailto:whitestationhighschool1970@gmail.com?subject=Updated%20Photo">Send us an updated photo!!!</a></h4>
                         <div class="persons cards">
                             <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.photo_now && !person.deceased"></person>
                         </div>
