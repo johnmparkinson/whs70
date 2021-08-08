@@ -1,17 +1,14 @@
 const gulp = require('gulp');
 const babel = require('gulp-babel');
-const sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
 const browserSync = require('browser-sync');
 const cssnano = require('gulp-cssnano');
 const del = require('del');
 const minify = require('gulp-babel-minify');
+const sitemap = require('gulp-sitemap');
 const csvtojson = require('gulp-csvtojson');
-
-/* To Do */
-// Clean
-// Inject
 
 let mode = process.env.NODE_ENV || "preview";
 
@@ -19,8 +16,12 @@ let destRoot = (mode == "preview") ? "_tmp" : "_dist";
 
 const paths = {    
     scripts: {
-      src: "src/js/*.js",
+      src: "src/js/**/*.+(js|jsx)",
       dest: destRoot + "/js"
+    },
+    frameworks: {
+        src: "src/jsframeworks/**/*.+(js)",
+        dest: destRoot + "/jsFrameworks"
     },
     styles: {
         src: "src/scss/main.scss",
@@ -70,6 +71,12 @@ const serve = (done) => {
     done();
 }
 
+const compileCsv = () => {
+    return gulp.src(paths.csv.src)
+        .pipe(csvtojson({ toArrayString: true, ignoreEmpty: true }))
+        .pipe(gulp.dest(paths.csv.dest))
+}
+
 const compileMarkup = () => {
     return gulp.src(paths.markup.src)
         .pipe(gulp.dest(paths.markup.dest))
@@ -85,12 +92,12 @@ const compileStyle = () => {
 const compileScript = () => {
     if (mode==="preview") {
         return gulp.src(paths.scripts.src)    
-        .pipe(babel())
+        .pipe(babel({plugins: ['@babel/plugin-transform-react-jsx']}))
         .pipe(minify())
         .pipe(gulp.dest(paths.scripts.dest))        
     } else {
         return gulp.src(paths.scripts.src)    
-        .pipe(babel())
+        .pipe(babel({plugins: ['@babel/plugin-transform-react-jsx']}))
         .pipe(minify())
         .pipe(gulp.dest(paths.scripts.dest))        
     }
@@ -112,10 +119,17 @@ const compileAssets = () => {
         .pipe(gulp.dest(paths.assets.dest))
 }
 
-const compileCsv = () => {
-    return gulp.src(paths.csv.src)
-        .pipe(csvtojson({ toArrayString: true, ignoreEmpty: true }))
-        .pipe(gulp.dest(paths.csv.dest))
+const compileFrameworks = () => {
+    return gulp.src(paths.frameworks.src)
+        .pipe(gulp.dest(paths.frameworks.dest))
+}
+
+const buildSitemap = () => {
+    return gulp.src([paths.markup.src,'!src/footer.html', '!src/site-nav__secondary.html','!src/google*.html','!src/views/'])
+        .pipe(sitemap({
+            siteUrl: 'https://www.sterncardio.com'
+        }))
+        .pipe(gulp.dest(destRoot));
 }
 
 const clean = (done) => {
@@ -130,7 +144,7 @@ const watch = (done) => {
     const watchImages = gulp.watch(paths.images.src, gulp.series(compileImages, server.reload));
     const watchData = gulp.watch(paths.data.src, gulp.series(compileData, server.reload));
     const watchAssets = gulp.watch(paths.assets.src, gulp.series(compileAssets, server.reload));
-    const watchCsv = gulp.watch(paths.csv.src, gulp.series(compileCsv, server.reload));
+    //const watchFrameworks = gulp.watch(paths.frameworks.src, gulp.series(compileFrameworks, server.reload));
     done();
 };
 
@@ -139,7 +153,7 @@ const compile = gulp.parallel(
 );
 
 gulp.task('default', gulp.series(clean, compile, serve, watch));
-gulp.task('build', gulp.series(clean, compile));
+gulp.task('build', gulp.series(clean, compile, buildSitemap));
 
 function reload(done) {
     server.reload();
