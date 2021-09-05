@@ -80,9 +80,10 @@
             <div id="app">
                 <section class="section section--padded">
                     <div class="tab__bar">
-                        <button v-on:click="activeTab=0" class="tab__button">1970</button>
+                        <button v-on:click="activeTab=0" class="tab__button">Our Whole Class</button>
                         <button v-on:click="activeTab=1" class="tab__button">Memorials</button>
-                        <button v-on:click="activeTab=2" class="tab__button">Today</button>
+                        <button v-on:click="activeTab=2" class="tab__button">What We Look Like Today</button>
+                        <button v-on:click="activeTab=3" class="tab__button">Still Trying to Find</button>
                     </div>
                     <div v-if="activeTab===0" class="tab__content">
                         <div class="persons person__columns">
@@ -98,6 +99,11 @@
                         <h4 class="card__title"><a href="mailto:whitestationhighschool1970@gmail.com?subject=Updated%20Photo">Send us an updated photo!!!</a></h4>
                         <div class="persons cards">
                             <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.photo_now && !person.deceased"></person>
+                        </div>
+                    </div>
+                    <div v-if="activeTab===3" class="tab__content">
+                        <div class="persons cards">
+                            <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.missing"></person>
                         </div>
                     </div>
                 </section>
@@ -151,7 +157,7 @@
         </script>
 
         <script type="text/x-template" id="personname-template">
-            <div>
+            <div class="person--small">
                 <div>
                     <span class="person__name person__name--first">{{ person.first_name }}</span>
                     <span class="person__name person__name--first"> {{ person.nick_name }}</span>
