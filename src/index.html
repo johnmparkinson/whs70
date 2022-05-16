@@ -7,6 +7,21 @@
         <title>White Station High School Class of 1970</title>
         <link href="/css/main.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            .container {
+                position: relative;
+                width: 100%;
+                height: 0;
+                padding-bottom: 56.25%;
+            }
+            .video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
     </head>
     <body>
         <main>
@@ -26,7 +41,7 @@
             <section class="cards">
                 <div class="card card--4">
                     <div class="cards cards--evenly">
-                        <div class="card card--padded card--spaced card--half">
+                        <div class="card card--padded card--spaced card--full">
                             <h2 class="card__title">About the Site</h2>
                             <div class="card__description">
                                 <p><b>Disclaimer: This website is not affiliated with <a href="https://schools.scsk12.org/whitestation-hs#calendar23107/20210605/month">White Station High School</a> in Memphis, Tennessee. Vendors, please contact the school directly instead of contacting the classmate who created the website. Thank you.</b></p> 
@@ -40,10 +55,12 @@
                                 <p>We make an effort to keep in touch with one another, decade by decade. We are the Spartans from the Class of 1970 at White Station High School in Memphis, Tennessee. We do this together. </p>
                             </div>
                         </div>
-                        <div class="card card--padded card--spaced card--half">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/O1o1velXEqc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="card card--padded card--spaced card--full">
+                            <div class="container">
+                                <iframe class="video" src="https://www.youtube.com/embed/O1o1velXEqc?loop=1&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
                         </div>
-                        <div class="card card--padded card--spaced card--half">
+                        <div class="card card--padded card--spaced card--full">
                             <h2 class="card__title">Highlights</h2>
                             <div class="card__description">
                                 <ul class="list--unordered">
