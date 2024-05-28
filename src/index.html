@@ -124,7 +124,7 @@
                     </div>
                     <div v-if="activeTab===3" class="tab__content">
                         <div class="persons cards">
-                            <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.missing"></person>
+                            <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.missing && !person.deceased"></person>
                         </div>
                     </div>
                 </section>
