@@ -1,0 +1,30 @@
+[debug] [2024-07-19T01:14:24.932Z] ----------------------------------------------------------------------
+[debug] [2024-07-19T01:14:24.934Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2024-07-19T01:14:24.934Z] CLI Version:   13.7.3
+[debug] [2024-07-19T01:14:24.934Z] Platform:      darwin
+[debug] [2024-07-19T01:14:24.934Z] Node Version:  v18.16.1
+[debug] [2024-07-19T01:14:24.936Z] Time:          Thu Jul 18 2024 20:14:24 GMT-0500 (Central Daylight Time)
+[debug] [2024-07-19T01:14:24.936Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-07-19T01:14:25.026Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-07-19T01:14:25.027Z] > authorizing via signed-in user (linda.goodwin.parkinson@gmail.com)
+[debug] [2024-07-19T01:14:25.027Z] [iam] checking project whitestation70 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-07-19T01:14:25.028Z] > refreshing access token with scopes: []
+[debug] [2024-07-19T01:14:25.030Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-07-19T01:14:25.030Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-07-19T01:14:25.497Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-07-19T01:14:25.498Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-07-19T01:14:25.567Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/whitestation70:testIamPermissions [none]
+[debug] [2024-07-19T01:14:25.567Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/whitestation70:testIamPermissions x-goog-quota-user=projects/whitestation70
+[debug] [2024-07-19T01:14:25.567Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/whitestation70:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-07-19T01:14:25.802Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/whitestation70:testIamPermissions 200
+[debug] [2024-07-19T01:14:25.802Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/whitestation70:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-07-19T01:14:25.803Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/whitestation70 [none]
+[debug] [2024-07-19T01:14:26.095Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/whitestation70 200
+[debug] [2024-07-19T01:14:26.095Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/whitestation70 {"projectId":"whitestation70","projectNumber":"705079749190","displayName":"whitestation70","name":"projects/whitestation70","resources":{"hostingSite":"whitestation70","realtimeDatabaseInstance":"whitestation70"},"state":"ACTIVE","etag":"1_22c404eb-13eb-4312-a1e1-763bab6d2154"}
+[info] 
+[info] === Deploying to 'whitestation70'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2024-07-19T01:14:26.099Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/whitestation70/versions [none]
+[debug] [2024-07-19T01:14:26.099Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/whitestation70/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
