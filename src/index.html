@@ -44,33 +44,35 @@
                         <div class="card card--padded card--spaced card--full">
                             <h2 class="card__title">About the Site</h2>
                             <div class="card__description">
-                                <p><b>Disclaimer: This website is not affiliated with <a href="https://schools.scsk12.org/whitestation-hs#calendar23107/20210605/month">White Station High School</a> in Memphis, Tennessee. Vendors, please contact the school directly instead of contacting the classmate who created the website. Thank you.</b></p> 
-                                
                                 <p>This website was created for the Class of 1970 at White Station High School in Memphis, Tennessee. The purpose of the website is to share news that is relevant to our class.</p>
                                 </p>
-                                <p>
-                                    Over the years, we have had several class reunions. We celebrated milestone anniversaries of our graduation and we celebrated turning 70 together. We have shared joy as well as sadness over the years, having lost classmates who we lovingly remember as our friends.
-                                </p>
-                                <p>Past Reunions: 
-                                    <ul>
-                                        <li>1980 Evan Murray's home; softball at St. Louis School</li>
-                                        <li>1990 The Peabody Hotel</li>
-                                        <li>2000 Leslie Ballin's home; Jewish Community Center</li>
-                                        <li>2010 Leslie Ballin's home; The Tower Room</li>
-                                        <li>2012 Our 60th Birthday Party, Pickering Center</li>
-                                        <li>2015 Leslie Ballin's home; Ridgeway Country Club</li>
-                                        <li>2022 50+2 Reunion, Memphis Children's Museum, WSHS Tour, Guest House at Graceland</li>
-                                        <li>2015 55th Reunion, Leslie Ballin's home</li>
-                                    </ul>
-                                <p style="margin-top: 1rem;">We make an effort to keep in touch with one another, decade by decade. We are the Spartans from the Class of 1970 at White Station High School in Memphis, Tennessee. We do this together. </p>
                             </div>
                         </div>
                         <div class="card card--padded card--spaced card--full" id="video">
+                            <h2 class="card__title">Photos from the Latest Reunion</h2>
                             <div class="container">
                                 <iframe width="640" height="360" src="https://www.youtube.com/embed/40KZjAJyZlw?si=zIEN8cjFukEMi4VL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                 
                                 <p style="margin-top: 1rem;">Thank you, Cindy McIntyre, for all the great pics!</p>
                             </div>
+                        </div>
+                        <div class="card card--padded card--full">
+                            <h2 class="card__title">Past Reunions</h2>
+                            <p>
+                                Over the years, we have had several class reunions. We celebrated milestone anniversaries of our graduation and we celebrated turning 70 together. We have shared joy as well as sadness over the years, having lost classmates who we lovingly remember as our friends.
+                            </p>                                
+                                <ul>
+                                    <li>1980 Evan Murray's home; softball at St. Louis School</li>
+                                    <li>1990 The Peabody Hotel</li>
+                                    <li>2000 Leslie Ballin's home; Jewish Community Center</li>
+                                    <li>2010 Leslie Ballin's home; The Tower Room</li>
+                                    <li>2012 Our 60th Birthday Party, Pickering Center</li>
+                                    <li>2015 Leslie Ballin's home; Ridgeway Country Club</li>
+                                    <li>2022 50+2 Reunion, Memphis Children's Museum, WSHS Tour, Guest House at Graceland</li>
+                                    <li>2015 55th Reunion, Leslie Ballin's home</li>
+                                </ul>
+                            <p style="margin-top: 1rem;">We make an effort to keep in touch with one another, decade by decade. We are the Spartans from the Class of 1970 at White Station High School in Memphis, Tennessee. We do this together. </p>
+
                         </div>
                         <div class="card card--padded card--spaced card--full">
                             <h2 class="card__title">Highlights</h2>
@@ -128,8 +130,7 @@
                             <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.deceased"></person>
                         </div>
                     </div>
-                    <div v-if="activeTab===2" class="tab__content">
-                        <h4 class="card__title"><a href="mailto:whitestationhighschool1970@gmail.com?subject=Updated%20Photo">Send us an updated photo!!!</a></h4>
+                    <div v-if="activeTab===2" class="tab__content">                        
                         <div class="persons cards">
                             <person v-for="person in people" v-bind:key="person.id" v-bind:person="person" v-if="person.photo_now && !person.deceased"></person>
                         </div>
@@ -156,6 +157,7 @@
                 <section class="section section--padded cards">
                     <div class="card">
                         <p class="card__description">Class photo courtesy of DB Kay Productions</p>
+                        <p>Disclaimer: This website is not affiliated with <a href="https://schools.scsk12.org/whitestation-hs#calendar23107/20210605/month">White Station High School</a> in Memphis, Tennessee. Vendors, please contact the school directly instead of contacting the classmate who created the website. Thank you.</p> 
                     </div>
                 </section>
             </footer>
